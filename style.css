@@ -697,6 +697,7 @@ input {
     width: 100%;
     z-index: 5;
     background: #282828;
+    padding: 0 10px;
 }
     .mobile_hidden {
         display: none;
