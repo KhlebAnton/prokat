@@ -46,7 +46,21 @@ body {
     overflow-x: hidden;
     min-width: 360px;
 }
-
+.btn {
+    transition: .2s;
+    box-shadow: 0px 0px 0px 0px #000000;
+}
+.btn:hover {
+    transform: translateY(-2px) translateX(-2px);
+    box-shadow: 2px 2px 0px 0px #000000a9;
+}
+.btn:active {
+    transform: translateY(0px) translateX(0px);
+    box-shadow: 0px 0px 0px 0px #000000;
+}
+.btn_primary:active {
+    background-color: #c50000;
+}
 input {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
@@ -202,7 +216,12 @@ input {
     justify-content: space-between;
     gap: 20px;
 }
-
+.nav__item {
+    transition: .3s;
+}
+.nav__item:hover {
+    transform: scale(1.2);
+}
 .stocks {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -222,7 +241,13 @@ input {
     justify-content: end;
     padding: 5px;
     overflow: hidden;
+}   
 
+
+.stocks__item:hover .stocks__item-title{
+ min-width: 100%;
+ background: #ff000000;
+ color: #ff0000;
 }
 
 .stocks__item-title {
@@ -236,6 +261,8 @@ input {
     background-color: #ff0000;
     padding: 5px 14px;
     text-wrap: nowrap;
+    text-align: center;
+    transition: .5s;
 }
 
 .stocks__item-text {
@@ -343,8 +370,17 @@ input {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: .2s;
 }
-
+.why__item:hover .why__item-icon {
+    transform: scale(.95);
+}
+.why__item-icon svg {
+    transition: .3s;
+}
+.why__item:hover .why__item-icon svg {
+    transform: scale(1.5);
+}
 .why__item-title {
     text-wrap: nowrap;
     font-size: 18px;
@@ -431,6 +467,10 @@ input {
 
 .contanct-item {
     font-size: 22px;
+    transition: .3s;
+}
+.contanct-item:hover {
+    color: #fdc403;
 }
 
 .contacts__info {
@@ -746,6 +786,9 @@ input {
     .footer__items {
         display: none;
     }
+    .why__item {
+        width: 30%;
+    }
 }
 
 @media (max-width:750px) {
@@ -765,6 +808,7 @@ input {
         gap: 87px;
         margin-top: 30px;
     }
+    
 }
 @media (max-width:600px) {
     .product-price__item-dash {
@@ -775,6 +819,9 @@ input {
     }
     .product-price__item span:last-child {
         text-align: end;
+    }
+    .why__item {
+        width: 40%;
     }
 }
 @media (max-width:500px) {
@@ -800,5 +847,8 @@ input {
         flex-direction: column;
         justify-content: space-between;
         gap: 8px;
+    }
+    .why__item {
+        width: 100%;
     }
 }
